@@ -9,7 +9,7 @@ public class dog_controller : MonoBehaviour
     Rigidbody2D dogRB;
     SpriteRenderer spriteRenderer;
 
-    private float previousTime = 0;
+    //private float previousTime = 0;
 
     [SerializeField]
     public float moveTime = 0.8f;
@@ -42,8 +42,6 @@ public class dog_controller : MonoBehaviour
     }
 
 
-
-
     private void FixedUpdate()
     {
         
@@ -59,9 +57,7 @@ public class dog_controller : MonoBehaviour
             animator.Play("dog_jump");
         }
 
-
-
-            if (Input.GetKey("d"))
+        if (Input.GetKey("d"))
         {
             dogRB.velocity = new Vector2(dog_speed, dogRB.velocity.y);
             

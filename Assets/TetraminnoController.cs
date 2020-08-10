@@ -51,6 +51,9 @@ public class TetraminnoController : MonoBehaviour
         if (collision.gameObject.name == "game_map")
         {
             Debug.Log("Tetramino hits game_map");
+            gameObject.layer = 9;
+            FindObjectOfType<Latiku_controller>().spawnTetramino();
+
             this.enabled = false;
 
         }

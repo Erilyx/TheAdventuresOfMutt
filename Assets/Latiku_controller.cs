@@ -11,6 +11,7 @@ public class Latiku_controller : MonoBehaviour
     [SerializeField]
     private float latiku_speed = 1.5f;
 
+    public GameObject[] Tetraminos;
 
 
     // Start is called before the first frame update
@@ -20,9 +21,6 @@ public class Latiku_controller : MonoBehaviour
         latikuRB = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
-
-
 
     private void FixedUpdate()
     {
@@ -44,6 +42,15 @@ public class Latiku_controller : MonoBehaviour
         }
 
     }
+
+    public void spawnTetramino()
+    {
+        Instantiate(Tetraminos[Random.Range(0, Tetraminos.Length)], transform.position, Quaternion.identity);
+    }
+
+
+
+
 
 }
 

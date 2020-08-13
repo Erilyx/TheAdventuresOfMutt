@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -53,11 +54,16 @@ public class TetraminnoController : MonoBehaviour
             Debug.Log("Tetramino hits game_map");
             //gameObject.layer = 9;
             FindObjectOfType<Latiku_controller>().spawnTetramino();
-
+            transform.gameObject.name = "game_map";  //this makes other tetraminos die when they hit it
             this.enabled = false;
-
+            
+            isGameOver();
         }
 
+
+
+        /*   hold on, don't do this... let the tetraminos turn INTO floor one they hit.....
+         *   
         if (collision.gameObject.tag == "tetramino")
         {
             Debug.Log("Tetramino hits other tetramino");
@@ -67,7 +73,11 @@ public class TetraminnoController : MonoBehaviour
             this.enabled = false;
 
         }
-
+        */
     }
-    
+
+    private bool isGameOver()
+    {
+        //how to figure out the game is over...
+    }
 }

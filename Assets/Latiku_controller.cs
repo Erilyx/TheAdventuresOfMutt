@@ -9,7 +9,7 @@ public class Latiku_controller : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     [SerializeField]
-    private float latiku_speed = 1.5f;
+    private int latiku_speed = 2;
 
     public GameObject[] Tetraminos;
 
@@ -20,6 +20,10 @@ public class Latiku_controller : MonoBehaviour
         animator = GetComponent<Animator>();
         latikuRB = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        //start game with tetramino
+        spawnTetramino();
+
     }
 
     private void FixedUpdate()

@@ -7,7 +7,7 @@ public class TetraminnoController : MonoBehaviour
 {
 
     public Vector3 rotationPoint;
-    public float fallTime = 0.8f;
+    public float fallTime = 0.6f;
     private float previousTime;
 
     // Start is called before the first frame update
@@ -51,15 +51,23 @@ public class TetraminnoController : MonoBehaviour
         if (collision.gameObject.name == "game_map")
         {
             Debug.Log("Tetramino hits game_map");
-            gameObject.layer = 9;
+            //gameObject.layer = 9;
             FindObjectOfType<Latiku_controller>().spawnTetramino();
 
             this.enabled = false;
 
         }
 
+        if (collision.gameObject.tag == "tetramino")
+        {
+            Debug.Log("Tetramino hits other tetramino");
+
+            FindObjectOfType<Latiku_controller>().spawnTetramino();
+
+            this.enabled = false;
+
+        }
 
     }
-
     
 }

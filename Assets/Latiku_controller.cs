@@ -31,12 +31,11 @@ public class Latiku_controller : MonoBehaviour
                 
         if (Input.GetKey("right"))
         {
-            latikuRB.velocity = new Vector2(latiku_speed, 0);
-
+            transform.position += new Vector3(latiku_speed, 0, 0);
         }
         else if (Input.GetKey("left"))
         {
-            latikuRB.velocity = new Vector2(-latiku_speed, 0);
+            transform.position += new Vector3(-latiku_speed, 0, 0);
 
         }
         else
